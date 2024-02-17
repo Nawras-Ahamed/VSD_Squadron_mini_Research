@@ -2,6 +2,9 @@
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9b29bc2b-0ed7-4170-aa8d-5235805f38fe)
+
+
 This repo is intended to document the weekly progress.
 
 ### The first online meeting took place on 16th February, 2024, @6PM
