@@ -5,7 +5,6 @@
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9b29bc2b-0ed7-4170-aa8d-5235805f38fe)
 
 BOARD SPECS:
-CH32V003F4U6 chip with 32-bit RISC-V core based on RV32EC instruction set
 
 | CH32V003F4U6 chip with 32-bit RISC-V core based on RV32EC instruction set |
 | ------------------------------------------------------------------------- 
