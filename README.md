@@ -8,7 +8,7 @@ BOARD SPECS:
 
 | CH32V003F4U6 chip with 32-bit RISC-V core based on RV32EC instruction set |
 | ------------------------------------------------------------------------- 
-| SRAM                                                                       2kb onchip volatile sram,<br>16kb external program memory                                    |
+| SRAM                                                                       2kb onchip volatile sram     16kb external program memory                                    |
 | Processor                                                                  24 MHz                                                                                       |
 | Sink Current per I/O Pin                                                   8 mA                                                                                         |
 | Source Current per I/O Pin                                                 8 mA                                                                                         |
@@ -35,3 +35,23 @@ This repo is intended to document the weekly progress.
 2) install Yosys 
 3) install iverilog 
 4) install gtkwave
+
+### INSTALLING RISC-V GNU TOOLCHAIN
+
+```sudo apt install git-all```   # To install git
+
+```sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev``` *make sure to install the dependencies*
+
+## Creating a directory
+```mkdir risc-v```
+```cd risc-v```
+```git clone https://github.com/riscv/riscv-gnu-toolchain```
+
+## Create a opt dir
+```mkdir /opt/riscv```  *try sudo incase of permission denial*
+
+## Config and make inside the risc-v gnu toolchain dir (Have patience)
+
+```./configure --prefix=/opt/riscv```
+
+```make linux``` 
