@@ -7,7 +7,7 @@
 
 This repo is intended to document the weekly progress.
 
-### The first online meeting took place on 16th February, 2024, @6PM
+### The first online meet was held on 16th of Feb 2024 @6PM
 
 ## TASK 1
 1) install RISC-V GNU Toolchain 
