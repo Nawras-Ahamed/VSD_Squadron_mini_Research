@@ -52,6 +52,6 @@ This repo is intended to document the weekly progress.
 
 ## Config and make inside the risc-v gnu toolchain dir (Have patience)
 
-```./configure --prefix=/opt/riscv```
+```./configure --prefix=/opt/riscv```  installs at opt/riscv
 
 ```make linux``` 
