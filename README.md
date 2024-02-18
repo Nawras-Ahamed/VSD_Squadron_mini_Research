@@ -2,7 +2,10 @@
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9b29bc2b-0ed7-4170-aa8d-5235805f38fe)
+
+![NewMini224-removebg-preview](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/02693492-c8b9-44a6-90ef-6c6281721042)
+
+
 
 BOARD SPECS:
 
@@ -43,12 +46,17 @@ This repo is intended to document the weekly progress.
 
 ```sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev``` *make sure to install the dependencies*
 
+![gnu_dependencies](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/3a354063-2d87-44c5-8b54-e2f13d2b1965)
+
 
 
 ## Creating a directory
 ```mkdir risc-v```
 ```cd risc-v```
 ```git clone https://github.com/riscv/riscv-gnu-toolchain```
+
+![gnu_toolchain_clone](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/760e3e42-8c07-4254-80a3-050e489ac42d)
+
 
 ## Create a opt dir
 ```mkdir /opt/riscv```  *try sudo incase of permission denial*
@@ -58,4 +66,37 @@ This repo is intended to document the weekly progress.
 ```./configure --prefix=/opt/riscv```  
 
 ```make``` 
+
+
+### INSTALLING IVERILOG GTKWAVE & YOSYS
+
+### YOSYS
+
+```bash
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys 
+sudo apt-get install build-essential clang bison flex \libreadline-dev gawk tcl-dev libffi-dev git \ graphviz xdot pkg-config python3 libboost-system-dev\libboost-python-dev libboost-filesystem-dev zlib1g-dev
+make config-gcc
+make 
+sudo make install
+```
+
+![yosys_make](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/e722e508-0802-4f50-9cb6-02e9c6bafe48)
+
+
+![buildsuccess_yosys](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/5e10e5b8-19dd-4460-994f-2759e9b942b1)
+
+
+### iVerilog
+
+```
+sudo apt-get install iverilog
+```
+
+
+### GTkWave
+``` sudo apt-get install gtkwave ```
+
+![iverilog_gtkwave](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/344a4225-c6bb-4728-a325-ac66d1621b28)
+
 </details>
