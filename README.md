@@ -44,7 +44,7 @@ This repo is intended to document the weekly progress.
 
 4) install gtkwave
 
-### INSTALLING RISC-V GNU TOOLCHAIN
+### CLONING RISC-V GNU TOOLCHAIN
 
 ```sudo apt install git-all```   # To install git
 
@@ -52,11 +52,6 @@ This repo is intended to document the weekly progress.
 
 ![gnu_dependencies](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/3a354063-2d87-44c5-8b54-e2f13d2b1965)
 
-
-
-## Creating a directory
-```mkdir risc-v```
-```cd risc-v```
 ```git clone https://github.com/riscv/riscv-gnu-toolchain```
 
 ![gnu_toolchain_clone](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/760e3e42-8c07-4254-80a3-050e489ac42d)
