@@ -35,9 +35,13 @@ This repo is intended to document the weekly progress.
 
 <details>
     <summary> TASK 1 </summary>
+
 1) install RISC-V GNU Toolchain 
+
 2) install Yosys 
+
 3) install iverilog 
+
 4) install gtkwave
 
 ### INSTALLING RISC-V GNU TOOLCHAIN
@@ -61,11 +65,36 @@ This repo is intended to document the weekly progress.
 ## Create a opt dir
 ```mkdir /opt/riscv```  *try sudo incase of permission denial*
 
-## Config and make inside the risc-v gnu toolchain dir (Have patience)
+In my case I created a driectory ```mkdir riscv``` and ``` chmod 777 home/nawras/riscv ```
+
+## Config and make inside the risc-v gnu toolchain dir 
 
 ```./configure --prefix=/opt/riscv```  
 
-```make``` 
+In my case ```./configure --prefix=/home/nawras/riscv```  
+
+Then
+```make``` **(Have patience)**
+
+### Troubleshooting
+
+**ERROR 1**: "gcc not found"
+try ```sudo apt-get install build-essential```
+see if gcc is in /usr/bin/
+
+**ERROR 2**: "no acceptable c compiler found in $PATH"
+Open the .bashrc by any editors like vim,emacs,nano,gedit ```nano ~/.bashrc``` 
+Add the below line at the end of .bashrc and save it
+```export PATH="$PATH:/usr/bin/gcc```
+
+**ERROR 3**: Even after installing gcc g++ sometimes it shows 'gcc' command not found ,though it suggest to ```sudo apt install gcc``` which again will cause the same error. I figured this by ```ls```'ing the /usr/bin directory to find the gcc g++ cc to be in red text with black background indicates broken link or missing file.
+
+
+Better purge it at **YOUR OWN RISK** and reinstall it again.
+```sudo apt-get purge gcc```
+
+or **REINSTALL** ```sudo apt-get install --reinstall gcc``` (didn't work for me)
+
 
 
 ### INSTALLING IVERILOG GTKWAVE & YOSYS
