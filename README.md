@@ -30,7 +30,8 @@ This repo is intended to document the weekly progress.
 
 ### The first online meet was held on 16th of Feb 2024 @6PM
 
-## TASK 1
+<details>
+    <summary> TASK 1 </summary>
 1) install RISC-V GNU Toolchain 
 2) install Yosys 
 3) install iverilog 
@@ -41,6 +42,8 @@ This repo is intended to document the weekly progress.
 ```sudo apt install git-all```   # To install git
 
 ```sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev``` *make sure to install the dependencies*
+
+
 
 ## Creating a directory
 ```mkdir risc-v```
@@ -55,3 +58,4 @@ This repo is intended to document the weekly progress.
 ```./configure --prefix=/opt/riscv```  
 
 ```make``` 
+</details>
