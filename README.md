@@ -150,4 +150,33 @@ J-type: For unconditional jump operations transferring control to a different in
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/c5ee17d3-5017-41ba-bdbb-7c3acead31d8)
 
 
+Instruction 1 : ``` add r6, r2, r1``` <br>
+Instruction Type : **R-TYPE ARITHMETIC** <br>
+Instruction Specification : Performs addition operation on the contents of registers r2 and r1 and stores the result in register r6. <br>
+Instruction Format :
+
+
+Instruction 2 : ``` sub r7, r1, r2 ``` <br>
+Instruction Type : **R-TYPE ARITHMETIC** <br>
+Instruction Specification : Performs subtraction operation on the contents of registers r2 and r1 and stores the result in register r7. <br>
+Instruction Format :
+
+Instruction 3 : ``` and r8, r1, r3``` <br>
+Instruction Type : **R-TYPE LOGICAL** <br>
+Instruction Specification : Performs bitwise AND operation between the contents of registers r1 and r3 and stores the result in register r8. <br>
+Instruction Format :
+
+Instruction 4 : ```or r9, r2, r5``` <br>
+Instruction Type : **R-TYPE LOGICAL** <br>
+Instruction Specification : Performs bitwise OR operation between the contents of registers r2 and r5 and stores the result in register r9. <br>
+Instruction Format :
+
+Instruction 5 : ```xor r10, r1, r4``` <br>
+Instruction Type : **R-TYPE LOGICAL** <br>
+Instruction Specification : Performs bitwise XOR operation between the contents of registers r1 and r4 and stores the result in register r10. <br>
+Instruction Format :
+
+
+
+
 </details>
