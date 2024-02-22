@@ -1,4 +1,4 @@
-# A 4-week Research Internship on RISC-V using VSDSquadron Mini RISC-V Dev Board
+![riscv_compilation](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/4f465219-32a9-4fa1-b360-b0974b230a78)# A 4-week Research Internship on RISC-V using VSDSquadron Mini RISC-V Dev Board
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
@@ -34,7 +34,7 @@ This repo is intended to document the weekly progress.
 ### The first online meet was held on 16th of Feb 2024 @6PM
 
 <details>
-    <summary> TASK 1 </summary>
+    <summary> TASK 1 - INSTALLING TOOLS</summary>
 
 1) install RISC-V GNU Toolchain 
 
@@ -127,7 +127,7 @@ sudo apt-get install iverilog
 
 
 <details>
-  <summary> TASK 2 </summary>
+  <summary> TASK 2 RISC-V ISA AND INSTRUCTION FORMAT </summary>
   
   ### THE RISC-V ISA
 
@@ -217,4 +217,65 @@ Instruction Specification :  <br>
 Instruction Format :
 
 
+</details>
+
+
+<details>
+    <summary> TASK 2 - COMPILING A C FILE & VIEWING THE OBJDUMP</summary>
+   I just created a C program that sorts an array.
+
+      #include <stdio.h
+      void main()
+
+    {
+
+        int i, j, a, n, x[30];
+
+        printf("Enter the value of N \n");
+
+        scanf("%d", &n);
+
+        printf("Enter the numbers \n");
+
+        for (i = 0; i < n; ++i)
+
+            scanf("%d", &x[i]);
+
+        for (i = 0; i < n; ++i)
+
+        {
+             for (j = i + 1; j < n; ++j)
+
+            {
+
+                if (x[i] > x[j])
+
+                {
+
+                   a =  x[i];
+
+                    x[i] = x[j];
+
+                    x[j] = a;
+
+                }
+            }
+     } 
+     }
+
+
+```riscv64-unknown-elf-gcc -o1 -o sorti.o sorti.```
+![riscv_compile](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/b7e607e7-9cf9-4129-bbb0-401b85ef644a)
+
+
+The obj file can be seen after running this 
+
+while i can also see the riscv assembly 
+```riscv64-unknown-elf-objdump -d sorti.o | less```
+
+![main](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/54aab80e-5bb5-4448-a04b-f81d87b61810)
+
+
+    
+   
 </details>
