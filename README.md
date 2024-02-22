@@ -141,10 +141,10 @@ It includes instructions for arithmetic, logical and control,memory access and m
 The instruction format of an operation in binary is known as its instruction format. RISC-V employs six core instruction formats, each encoded in a fixed-length 32-bit format for streamlined decoding and execution. These formats fall into six types:
 
 R-type: For register-to-register operations like arithmetic and logical operations, utilizing three register operands. <br>
-I-type: For immediate operations involving arithmetic and logical operations with a 12-bit immediate value, employing two register operands. <br>
+I-type: For short immediate operations involving arithmetic and logical operations with a 12-bit immediate value, employing two register operands. <br>
 S-type: For store operations transferring data from a register to memory, involving two register operands and a 12-bit immediate value for memory address offset. <br>
 B-type: For conditional branch operations directing control flow based on a condition, with two register operands and a 12-bit immediate value for branch target address. <br>
-U-type: For operations with a 20-bit immediate value, such as loading a constant or setting the upper 20 bits of a register. <br>
+U-type: For operations with a 20-bit immediate(long) value, such as loading a constant or setting the upper 20 bits of a register. <br>
 J-type: For unconditional jump operations transferring control to a different instruction unconditionally, with one register operand and a 20-bit immediate value for the jump target address. <br>
 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/c5ee17d3-5017-41ba-bdbb-7c3acead31d8)
@@ -176,7 +176,45 @@ Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : Performs bitwise XOR operation between the contents of registers r1 and r4 and stores the result in register r10. <br>
 Instruction Format :
 
+Instruction 6 : ```slt r11, r2, r4``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification : <br>
+Instruction Format :
 
+Instruction 7 : ```addi r12, r4, 5``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 8 : ```sw r3, r1, 2``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 9 : ```lw r13, r1, 2``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 10 : ```beq r0, r0, 15``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 11 : ```bne r0, r1, 20``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 12 : ```sll r15, r1, r2(2)``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
+
+Instruction 13 : ```srl r16, r14, r2(2)``` <br>
+Instruction Type : ** ** <br>
+Instruction Specification :  <br>
+Instruction Format :
 
 
 </details>
