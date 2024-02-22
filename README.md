@@ -1,4 +1,4 @@
-![riscv_compilation](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/4f465219-32a9-4fa1-b360-b0974b230a78)# A 4-week Research Internship on RISC-V using VSDSquadron Mini RISC-V Dev Board
+# A 4-week Research Internship on RISC-V using VSDSquadron Mini RISC-V Dev Board
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
