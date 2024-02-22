@@ -124,3 +124,30 @@ sudo apt-get install iverilog
 ![iverilog_gtkwave](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/344a4225-c6bb-4728-a325-ac66d1621b28)
 
 </details>
+
+
+<details>
+  <summary> TASK 2 </summary>
+  
+  ### THE RISC-V ISA
+
+[Instruction Set Manual](https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf)
+
+
+The RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA.
+The base integer instruction set, also known as the "RV32I" or "RV64I" instruction set, depending on the address space size, provides the core functionality required for general-purpose computing. 
+It includes instructions for arithmetic, logical and control,memory access and manipulation <br>
+
+The instruction format of an operation in binary is known as its instruction format. RISC-V employs six core instruction formats, each encoded in a fixed-length 32-bit format for streamlined decoding and execution. These formats fall into six types:
+
+R-type: For register-to-register operations like arithmetic and logical operations, utilizing three register operands. <br>
+I-type: For immediate operations involving arithmetic and logical operations with a 12-bit immediate value, employing two register operands. <br>
+S-type: For store operations transferring data from a register to memory, involving two register operands and a 12-bit immediate value for memory address offset. <br>
+B-type: For conditional branch operations directing control flow based on a condition, with two register operands and a 12-bit immediate value for branch target address. <br>
+U-type: For operations with a 20-bit immediate value, such as loading a constant or setting the upper 20 bits of a register. <br>
+J-type: For unconditional jump operations transferring control to a different instruction unconditionally, with one register operand and a 20-bit immediate value for the jump target address. <br>
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/c5ee17d3-5017-41ba-bdbb-7c3acead31d8)
+
+
+</details>
