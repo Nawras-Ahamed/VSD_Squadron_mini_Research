@@ -296,7 +296,29 @@ while i can also see the riscv assembly
  sudo make install
 
  ```
-The ```--prefix=$riscv``` is where the environment variable is set to.
+The ```--prefix=/home/nawras/riscv``` is where the environment variable is set to.
+
+INSTALLING RISCV PROXY KERNEL (PK)
+
+```bash
+git clone https://github.com/riscv-software-src/riscv-pk.git
+mkdir build
+cd build
+../configure --prefix=$RISCV --host=riscv64-unknown-elf
+make
+make install
+```
+
+[**TROUBLESHOOT 1 -  HOST COMPILER , riscv-unknown-elf & PATH**](https://github.com/riscv-software-src/riscv-pk/issues/204)
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/29b8b342-f2fd-45f4-9392-8227509e8fb9)
+
+**ERROR 2** 
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/bd31c5d7-1b43-4082-9db3-fcd12714ac29)
+
+[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260)
+
+
 
 
 </details>
