@@ -284,8 +284,20 @@ while i can also see the riscv assembly
    
  [SPIKE RISCV ISA SIM](https://github.com/riscv-software-src/riscv-isa-sim)
 
+ INSTALLING SPIKE
  
-  
-   
+  ```bash
+ git clone https://github.com/riscv-software-src/riscv-isa-sim.git
+ sudo apt-get install device-tree-compiler libboost-regex-dev
+ mkdir build
+ cd build
+ ../configure --prefix=$riscv
+ make
+ sudo make install
+
+ ```
+The ```--prefix=$riscv``` is where the environment variable is set to.
+
+
 </details>
 
