@@ -177,43 +177,43 @@ Instruction Specification : Performs bitwise XOR operation between the contents 
 Instruction Format :
 
 Instruction 6 : ```slt r11, r2, r4``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification : <br>
+Instruction Type : **R-TYPE LOGICAL** <br>
+Instruction Specification : . It stands for "Set Less Than", and it compares the values in registers r2 and r4. If the value in r2 is less than the value in r4, it sets the value of r11 to 1; otherwise, it sets it to 0 <br>
 Instruction Format :
 
 Instruction 7 : ```addi r12, r4, 5``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **I-Type** <br>
+Instruction Specification : adds the immediate value 5 to the value in register r4 and stores the result in register r12 <br>
 Instruction Format :
 
 Instruction 8 : ```sw r3, r1, 2``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **S-TYPE** <br>
+Instruction Specification : stores the value from register r3 into the memory address formed by adding the immediate offset 2 to the value in register r1 <br>
 Instruction Format :
 
 Instruction 9 : ```lw r13, r1, 2``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **S-TYPE** <br>
+Instruction Specification : used to load a 32-bit value from memory into a register <br>
 Instruction Format :
 
 Instruction 10 : ```beq r0, r0, 15``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **B-TYPE** <br>
+Instruction Specification :checks if the values in registers r0 and r0 are equal. Since r0 is typically the zero register (hardwired to zero) this always evaluates TRUE <br>
 Instruction Format :
 
 Instruction 11 : ```bne r0, r1, 20``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **B-TYPE** <br>
+Instruction Specification :checks if the values in registers r0 and r1 are not equal If they are not equal the program will branch by adding the immediate offset of 20 to the PC <br>
 Instruction Format :
 
 Instruction 12 : ```sll r15, r1, r2(2)``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **R-TYPE** <br>
+Instruction Specification :logical left shift on the value in register r1, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r15 <br>
 Instruction Format :
 
 Instruction 13 : ```srl r16, r14, r2(2)``` <br>
-Instruction Type : ** ** <br>
-Instruction Specification :  <br>
+Instruction Type : **R-TYPE** <br>
+Instruction Specification :logical right shift on the value in register r14, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r16 <br>
 Instruction Format :
 
 
@@ -291,7 +291,7 @@ while i can also see the riscv assembly
  sudo apt-get install device-tree-compiler libboost-regex-dev
  mkdir build
  cd build
- ../configure --prefix=$riscv
+ ../configure --prefix=/home/nawras/riscv
  make
  sudo make install
 
@@ -304,7 +304,7 @@ INSTALLING RISCV PROXY KERNEL (PK)
 git clone https://github.com/riscv-software-src/riscv-pk.git
 mkdir build
 cd build
-../configure --prefix=$RISCV --host=riscv64-unknown-elf
+../configure --prefix=/home/nawras/riscv --host=riscv64-unknown-elf
 make
 make install
 ```
@@ -316,7 +316,7 @@ make install
 **ERROR 2** 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/bd31c5d7-1b43-4082-9db3-fcd12714ac29)
 
-[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260)
+[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) looks like the fence instruction is needed and i have to build a seperate riscv toolchain
 
 
 
