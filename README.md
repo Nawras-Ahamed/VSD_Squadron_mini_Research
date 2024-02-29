@@ -221,7 +221,7 @@ Instruction Format :
 
 
 <details>
-    <summary> TASK 2 - COMPILING A C FILE & VIEWING THE OBJDUMP</summary>
+    <summary> TASK 3 - COMPILING A C FILE & VIEWING THE OBJDUMP</summary>
    I just created a C program that sorts an array.
 
       #include <stdio.h
@@ -279,3 +279,13 @@ while i can also see the riscv assembly
     
    
 </details>
+<details>
+    <summary> TASK 4 - Optimization of C code and Intro To SPIKE sim </summary>
+   
+ [SPIKE RISCV ISA SIM](https://github.com/riscv-software-src/riscv-isa-sim)
+
+ 
+  
+   
+</details>
+
