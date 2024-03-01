@@ -417,12 +417,11 @@ riscv64-unknown-elf-objdump -d sort.o | less
    1015a:       610d                    addi    sp,sp,160
    1015c:       8082                    ret
 ```
+______________________
+**INSTALLING SPIKE**
 
-
- [SPIKE RISCV ISA SIM](https://github.com/riscv-software-src/riscv-isa-sim)
-
- INSTALLING SPIKE
- 
+[SPIKE RISCV ISA SIM](https://github.com/riscv-software-src/riscv-isa-sim)
+  
   ```bash
  git clone https://github.com/riscv-software-src/riscv-isa-sim.git
  sudo apt-get install device-tree-compiler libboost-regex-dev
@@ -433,9 +432,9 @@ riscv64-unknown-elf-objdump -d sort.o | less
  sudo make install
 
  ```
-The ```--prefix=/home/nawras/riscv``` is where the environment variable is set to.
+The ```--prefix=/home/nawras/riscv``` is where the path is set to.
 
-INSTALLING RISCV PROXY KERNEL (PK)
+**INSTALLING RISCV PROXY KERNEL (PK)**
 
 ```bash
 git clone https://github.com/riscv-software-src/riscv-pk.git
@@ -453,8 +452,15 @@ make install
 **ERROR 2** 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/bd31c5d7-1b43-4082-9db3-fcd12714ac29)
 
-[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) looks like the fence instruction is needed and i have to build a seperate riscv gnu toolchain for this.
+[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) <br>
 
-
+Looks like the fence instruction is needed and I have to build a seperate riscv gnu toolchain for this by 
+```bash
+cd riscv-gnu-toolchain
+mkdir build
+cd build
+../configure --prefix=/home/nawras/riscv --with-arch=rv64gc_zfencei
+make
+```
 </details>
 
