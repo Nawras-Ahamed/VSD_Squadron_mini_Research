@@ -459,7 +459,7 @@ Looks like the fence instruction is needed and I have to build a seperate riscv 
 cd riscv-gnu-toolchain
 mkdir build
 cd build
-../configure --prefix=/home/nawras/riscv --with-arch=rv64gc_zfencei
+../configure --prefix=/home/nawras/riscv --with-arch=rv64gc_zfencei --with-abi=lp64d
 make
 ```
 </details>
