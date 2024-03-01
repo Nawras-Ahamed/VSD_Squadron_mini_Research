@@ -127,7 +127,7 @@ sudo apt-get install iverilog
 
 
 <details>
-  <summary> TASK 2 RISC-V ISA AND INSTRUCTION FORMAT </summary>
+  <summary> TASK 2 - RISC-V ISA AND INSTRUCTION FORMAT </summary>
   
   ### THE RISC-V ISA
 
@@ -316,7 +316,9 @@ make install
 **ERROR 2** 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/bd31c5d7-1b43-4082-9db3-fcd12714ac29)
 
-[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) looks like the fence instruction is needed and i have to build a seperate riscv toolchain
+[**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) looks like the fence instruction is needed and i have to build a seperate riscv gnu toolchain for this.
+
+
 
 
 
