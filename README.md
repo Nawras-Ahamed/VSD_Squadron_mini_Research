@@ -281,7 +281,144 @@ while i can also see the riscv assembly
 </details>
 <details>
     <summary> TASK 4 - Optimization of C code and Intro To SPIKE sim </summary>
-   
+
+**Why do we need Optimization?**
+[Optimize-options in gcc](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
+
+Turning on optimization flags makes the compiler attempt to improve the performance and/or code size at the expense of compilation time and possibly the ability to debug the program
+
+With ```-O1```, the compiler tries to reduce code size and execution time, without performing any optimizations.
+Optimize even more. GCC performs nearly all supported optimizations that do not involve a space-speed tradeoff. As compared to -O, this option increases both compilation time and the performance of the generated code. 
+
+With ```-Ofast``` it enables all -O3(optimize yet more) optimizations. It also enables optimizations that are not valid for all standard-compliant programs.
+
+____________________
+**ASM FOR SORTING AN ARRAY**
+
+```bash
+riscv64-unknown-elf-gcc -O1 -o sort.o sorti.c
+riscv64-unknown-elf-objdump -d sort.o | less
+```
+
+```asm
+00000000000101a4 <main>:
+   101a4:       7135                    addi    sp,sp,-160
+   101a6:       ed06                    sd      ra,152(sp)
+   101a8:       00020537                lui     a0,0x20
+   101ac:       5c050513                addi    a0,a0,1472 # 205c0 <__clzdi2+0x42>
+   101b0:       434000ef                jal     105e4 <puts>
+   101b4:       18ec                    addi    a1,sp,124
+   101b6:       00020537                lui     a0,0x20
+   101ba:       5d850513                addi    a0,a0,1496 # 205d8 <__clzdi2+0x5a>
+   101be:       42e000ef                jal     105ec <scanf>
+   101c2:       00020537                lui     a0,0x20
+   101c6:       5e050513                addi    a0,a0,1504 # 205e0 <__clzdi2+0x62>
+   101ca:       41a000ef                jal     105e4 <puts>
+   101ce:       57f6                    lw      a5,124(sp)
+   101d0:       08f05a63                blez    a5,10264 <main+0xc0>
+   101d4:       e922                    sd      s0,144(sp)
+   101d6:       e526                    sd      s1,136(sp)
+   101d8:       e14a                    sd      s2,128(sp)
+   101da:       848a                    mv      s1,sp
+   101dc:       4401                    li      s0,0
+   101de:       00020937                lui     s2,0x20
+   101e2:       85a6                    mv      a1,s1
+   101e4:       5d890513                addi    a0,s2,1496 # 205d8 <__clzdi2+0x5a>
+   101e8:       404000ef                jal     105ec <scanf>
+   101ec:       2405                    addiw   s0,s0,1
+   101ee:       57f6                    lw      a5,124(sp)
+   101f0:       0491                    addi    s1,s1,4
+   101f2:       fef448e3                blt     s0,a5,101e2 <main+0x3e>
+   101f6:       06f05063                blez    a5,10256 <main+0xb2>
+   101fa:       004c                    addi    a1,sp,4
+   101fc:       fff7889b                addiw   a7,a5,-1
+   10200:       1882                    slli    a7,a7,0x20
+   10202:       0208d893                srli    a7,a7,0x20
+   10206:       8e3e                    mv      t3,a5
+   10208:       4501                    li      a0,0
+   1020a:       ffe7881b                addiw   a6,a5,-2
+   1020e:       00810313                addi    t1,sp,8
+   10212:       a00d                    j       10234 <main+0x90>
+   10214:       0791                    addi    a5,a5,4
+   10216:       00c78b63                beq     a5,a2,1022c <main+0x88>
+   1021a:       ffc5a703                lw      a4,-4(a1)
+   1021e:       4394                    lw      a3,0(a5)
+   10220:       fee6dae3                bge     a3,a4,10214 <main+0x70>
+   10224:       fed5ae23                sw      a3,-4(a1)
+   10228:       c398                    sw      a4,0(a5)
+   1022a:       b7ed                    j       10214 <main+0x70>
+   1022c:       0505                    addi    a0,a0,1
+   1022e:       0591                    addi    a1,a1,4
+   10230:       01c50f63                beq     a0,t3,1024e <main+0xaa>
+   10234:       0005079b                sext.w  a5,a0
+   10238:       03150363                beq     a0,a7,1025e <main+0xba>
+   1023c:       40f8063b                subw    a2,a6,a5
+   10240:       1602                    slli    a2,a2,0x20
+   10242:       9201                    srli    a2,a2,0x20
+   10244:       962a                    add     a2,a2,a0
+   10246:       060a                    slli    a2,a2,0x2
+   10248:       961a                    add     a2,a2,t1
+   1024a:       87ae                    mv      a5,a1
+   1024c:       b7f9                    j       1021a <main+0x76>
+   1024e:       644a                    ld      s0,144(sp)
+   10250:       64aa                    ld      s1,136(sp)
+   10252:       690a                    ld      s2,128(sp)
+   10254:       a801                    j       10264 <main+0xc0>
+   10256:       644a                    ld      s0,144(sp)
+   10258:       64aa                    ld      s1,136(sp)
+   1025a:       690a                    ld      s2,128(sp)
+   1025c:       a021                    j       10264 <main+0xc0>
+   1025e:       644a                    ld      s0,144(sp)
+   10260:       64aa                    ld      s1,136(sp)
+   10262:       690a                    ld      s2,128(sp)
+   10264:       60ea                    ld      ra,152(sp)
+   10266:       610d                    addi    sp,sp,160
+   10268:       8082                    ret
+```
+____________________
+
+```bash
+riscv64-unknown-elf-gcc -Ofast -o sort.o sorti.c
+riscv64-unknown-elf-objdump -d sort.o | less
+```
+
+```asm
+0000000000010104 <main>:
+   10104:       00020537                lui     a0,0x20
+   10108:       7135                    addi    sp,sp,-160
+   1010a:       55050513                addi    a0,a0,1360 # 20550 <__clzdi2+0x3e>
+   1010e:       ed06                    sd      ra,152(sp)
+   10110:       e14a                    sd      s2,128(sp)
+   10112:       466000ef                jal     10578 <puts>
+   10116:       00020937                lui     s2,0x20
+   1011a:       004c                    addi    a1,sp,4
+   1011c:       56890513                addi    a0,s2,1384 # 20568 <__clzdi2+0x56>
+   10120:       460000ef                jal     10580 <scanf>
+   10124:       00020537                lui     a0,0x20
+   10128:       57050513                addi    a0,a0,1392 # 20570 <__clzdi2+0x5e>
+   1012c:       44c000ef                jal     10578 <puts>
+   10130:       4792                    lw      a5,4(sp)
+   10132:       02f05263                blez    a5,10156 <main+0x52>
+   10136:       e922                    sd      s0,144(sp)
+   10138:       e526                    sd      s1,136(sp)
+   1013a:       4401                    li      s0,0
+   1013c:       0024                    addi    s1,sp,8
+   1013e:       85a6                    mv      a1,s1
+   10140:       56890513                addi    a0,s2,1384
+   10144:       43c000ef                jal     10580 <scanf>
+   10148:       4792                    lw      a5,4(sp)
+   1014a:       2405                    addiw   s0,s0,1
+   1014c:       0491                    addi    s1,s1,4
+   1014e:       fef448e3                blt     s0,a5,1013e <main+0x3a>
+   10152:       644a                    ld      s0,144(sp)
+   10154:       64aa                    ld      s1,136(sp)
+   10156:       60ea                    ld      ra,152(sp)
+   10158:       690a                    ld      s2,128(sp)
+   1015a:       610d                    addi    sp,sp,160
+   1015c:       8082                    ret
+```
+
+
  [SPIKE RISCV ISA SIM](https://github.com/riscv-software-src/riscv-isa-sim)
 
  INSTALLING SPIKE
@@ -317,10 +454,6 @@ make install
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/bd31c5d7-1b43-4082-9db3-fcd12714ac29)
 
 [**TROUBLESHOOT 2 - Error: unrecognized opcode fence.i, extension zifencei required**](https://github.com/riscv-software-src/riscv-pk/issues/260) looks like the fence instruction is needed and i have to build a seperate riscv gnu toolchain for this.
-
-
-
-
 
 
 </details>
