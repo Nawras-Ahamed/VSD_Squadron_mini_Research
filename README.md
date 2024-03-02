@@ -224,8 +224,9 @@ Instruction Format :
     <summary> TASK 3 - COMPILING A C FILE & VIEWING THE OBJDUMP</summary>
    I just created a C program that sorts an array.
 
-      #include <stdio.h
-      void main()
+    #include <stdio.h>
+
+    void main()
 
     {
 
@@ -260,8 +261,15 @@ Instruction Format :
 
                 }
             }
-     } 
-     }
+
+	}
+
+	 for (i = 0; i < n; ++i)
+
+            printf("%d \t", x[i]);
+
+}
+
 
 
 ```riscv64-unknown-elf-gcc -o1 -o sorti.o sorti.```
@@ -304,32 +312,32 @@ riscv64-unknown-elf-objdump -d sort.o | less
 00000000000101a4 <main>:
    101a4:       7135                    addi    sp,sp,-160
    101a6:       ed06                    sd      ra,152(sp)
-   101a8:       00020537                lui     a0,0x20
-   101ac:       5c050513                addi    a0,a0,1472 # 205c0 <__clzdi2+0x42>
-   101b0:       434000ef                jal     105e4 <puts>
+   101a8:       00022537                lui     a0,0x22
+   101ac:       24050513                addi    a0,a0,576 # 22240 <__clzdi2+0x3e>
+   101b0:       496000ef                jal     10646 <puts>
    101b4:       18ec                    addi    a1,sp,124
-   101b6:       00020537                lui     a0,0x20
-   101ba:       5d850513                addi    a0,a0,1496 # 205d8 <__clzdi2+0x5a>
-   101be:       42e000ef                jal     105ec <scanf>
-   101c2:       00020537                lui     a0,0x20
-   101c6:       5e050513                addi    a0,a0,1504 # 205e0 <__clzdi2+0x62>
-   101ca:       41a000ef                jal     105e4 <puts>
+   101b6:       00022537                lui     a0,0x22
+   101ba:       25850513                addi    a0,a0,600 # 22258 <__clzdi2+0x56>
+   101be:       490000ef                jal     1064e <scanf>
+   101c2:       00022537                lui     a0,0x22
+   101c6:       26050513                addi    a0,a0,608 # 22260 <__clzdi2+0x5e>
+   101ca:       47c000ef                jal     10646 <puts>
    101ce:       57f6                    lw      a5,124(sp)
-   101d0:       08f05a63                blez    a5,10264 <main+0xc0>
+   101d0:       0af05063                blez    a5,10270 <main+0xcc>
    101d4:       e922                    sd      s0,144(sp)
    101d6:       e526                    sd      s1,136(sp)
    101d8:       e14a                    sd      s2,128(sp)
    101da:       848a                    mv      s1,sp
    101dc:       4401                    li      s0,0
-   101de:       00020937                lui     s2,0x20
+   101de:       00022937                lui     s2,0x22
    101e2:       85a6                    mv      a1,s1
-   101e4:       5d890513                addi    a0,s2,1496 # 205d8 <__clzdi2+0x5a>
-   101e8:       404000ef                jal     105ec <scanf>
+   101e4:       25890513                addi    a0,s2,600 # 22258 <__clzdi2+0x56>
+   101e8:       466000ef                jal     1064e <scanf>
    101ec:       2405                    addiw   s0,s0,1
    101ee:       57f6                    lw      a5,124(sp)
    101f0:       0491                    addi    s1,s1,4
    101f2:       fef448e3                blt     s0,a5,101e2 <main+0x3e>
-   101f6:       06f05063                blez    a5,10256 <main+0xb2>
+   101f6:       08f05063                blez    a5,10276 <main+0xd2>
    101fa:       004c                    addi    a1,sp,4
    101fc:       fff7889b                addiw   a7,a5,-1
    10200:       1882                    slli    a7,a7,0x20
@@ -351,7 +359,7 @@ riscv64-unknown-elf-objdump -d sort.o | less
    1022e:       0591                    addi    a1,a1,4
    10230:       01c50f63                beq     a0,t3,1024e <main+0xaa>
    10234:       0005079b                sext.w  a5,a0
-   10238:       03150363                beq     a0,a7,1025e <main+0xba>
+   10238:       01150b63                beq     a0,a7,1024e <main+0xaa>
    1023c:       40f8063b                subw    a2,a6,a5
    10240:       1602                    slli    a2,a2,0x20
    10242:       9201                    srli    a2,a2,0x20
@@ -360,20 +368,26 @@ riscv64-unknown-elf-objdump -d sort.o | less
    10248:       961a                    add     a2,a2,t1
    1024a:       87ae                    mv      a5,a1
    1024c:       b7f9                    j       1021a <main+0x76>
-   1024e:       644a                    ld      s0,144(sp)
-   10250:       64aa                    ld      s1,136(sp)
-   10252:       690a                    ld      s2,128(sp)
-   10254:       a801                    j       10264 <main+0xc0>
-   10256:       644a                    ld      s0,144(sp)
-   10258:       64aa                    ld      s1,136(sp)
-   1025a:       690a                    ld      s2,128(sp)
-   1025c:       a021                    j       10264 <main+0xc0>
-   1025e:       644a                    ld      s0,144(sp)
-   10260:       64aa                    ld      s1,136(sp)
-   10262:       690a                    ld      s2,128(sp)
-   10264:       60ea                    ld      ra,152(sp)
-   10266:       610d                    addi    sp,sp,160
-   10268:       8082                    ret
+   1024e:       848a                    mv      s1,sp
+   10250:       4401                    li      s0,0
+   10252:       00022937                lui     s2,0x22
+   10256:       408c                    lw      a1,0(s1)
+   10258:       27890513                addi    a0,s2,632 # 22278 <__clzdi2+0x76>
+   1025c:       33c000ef                jal     10598 <printf>
+   10260:       2405                    addiw   s0,s0,1
+   10262:       0491                    addi    s1,s1,4
+   10264:       57f6                    lw      a5,124(sp)
+   10266:       fef448e3                blt     s0,a5,10256 <main+0xb2>
+   1026a:       644a                    ld      s0,144(sp)
+   1026c:       64aa                    ld      s1,136(sp)
+   1026e:       690a                    ld      s2,128(sp)
+   10270:       60ea                    ld      ra,152(sp)
+   10272:       610d                    addi    sp,sp,160
+   10274:       8082                    ret
+   10276:       644a                    ld      s0,144(sp)
+   10278:       64aa                    ld      s1,136(sp)
+   1027a:       690a                    ld      s2,128(sp)
+   1027c:       bfd5                    j       10270 <main+0xcc>
 ```
 ____________________
 
@@ -384,38 +398,68 @@ riscv64-unknown-elf-objdump -d sort.o | less
 
 ```asm
 0000000000010104 <main>:
-   10104:       00020537                lui     a0,0x20
-   10108:       7135                    addi    sp,sp,-160
-   1010a:       55050513                addi    a0,a0,1360 # 20550 <__clzdi2+0x3e>
-   1010e:       ed06                    sd      ra,152(sp)
-   10110:       e14a                    sd      s2,128(sp)
-   10112:       466000ef                jal     10578 <puts>
-   10116:       00020937                lui     s2,0x20
+   10104:       00022537                lui     a0,0x22
+   10108:       7171                    addi    sp,sp,-176
+   1010a:       21050513                addi    a0,a0,528 # 22210 <__clzdi2+0x3c>
+   1010e:       f506                    sd      ra,168(sp)
+   10110:       e54e                    sd      s3,136(sp)
+   10112:       506000ef                jal     10618 <puts>
+   10116:       000229b7                lui     s3,0x22
    1011a:       004c                    addi    a1,sp,4
-   1011c:       56890513                addi    a0,s2,1384 # 20568 <__clzdi2+0x56>
-   10120:       460000ef                jal     10580 <scanf>
-   10124:       00020537                lui     a0,0x20
-   10128:       57050513                addi    a0,a0,1392 # 20570 <__clzdi2+0x5e>
-   1012c:       44c000ef                jal     10578 <puts>
+   1011c:       22898513                addi    a0,s3,552 # 22228 <__clzdi2+0x54>
+   10120:       500000ef                jal     10620 <scanf>
+   10124:       00022537                lui     a0,0x22
+   10128:       23050513                addi    a0,a0,560 # 22230 <__clzdi2+0x5c>
+   1012c:       4ec000ef                jal     10618 <puts>
    10130:       4792                    lw      a5,4(sp)
-   10132:       02f05263                blez    a5,10156 <main+0x52>
-   10136:       e922                    sd      s0,144(sp)
-   10138:       e526                    sd      s1,136(sp)
-   1013a:       4401                    li      s0,0
-   1013c:       0024                    addi    s1,sp,8
-   1013e:       85a6                    mv      a1,s1
-   10140:       56890513                addi    a0,s2,1384
-   10144:       43c000ef                jal     10580 <scanf>
-   10148:       4792                    lw      a5,4(sp)
-   1014a:       2405                    addiw   s0,s0,1
-   1014c:       0491                    addi    s1,s1,4
-   1014e:       fef448e3                blt     s0,a5,1013e <main+0x3a>
-   10152:       644a                    ld      s0,144(sp)
-   10154:       64aa                    ld      s1,136(sp)
-   10156:       60ea                    ld      ra,152(sp)
-   10158:       690a                    ld      s2,128(sp)
-   1015a:       610d                    addi    sp,sp,160
-   1015c:       8082                    ret
+   10132:       06f05b63                blez    a5,101a8 <main+0xa4>
+   10136:       f122                    sd      s0,160(sp)
+   10138:       0020                    addi    s0,sp,8
+   1013a:       ed26                    sd      s1,152(sp)
+   1013c:       e94a                    sd      s2,144(sp)
+   1013e:       4481                    li      s1,0
+   10140:       8922                    mv      s2,s0
+   10142:       85ca                    mv      a1,s2
+   10144:       22898513                addi    a0,s3,552
+   10148:       4d8000ef                jal     10620 <scanf>
+   1014c:       4512                    lw      a0,4(sp)
+   1014e:       2485                    addiw   s1,s1,1
+   10150:       0911                    addi    s2,s2,4
+   10152:       fea4c8e3                blt     s1,a0,10142 <main+0x3e>
+   10156:       04a05663                blez    a0,101a2 <main+0x9e>
+   1015a:       4785                    li      a5,1
+   1015c:       02f50663                beq     a0,a5,10188 <main+0x84>
+   10160:       006c                    addi    a1,sp,12
+   10162:       4805                    li      a6,1
+   10164:       87ae                    mv      a5,a1
+   10166:       8742                    mv      a4,a6
+   10168:       4390                    lw      a2,0(a5)
+   1016a:       ffc5a683                lw      a3,-4(a1)
+   1016e:       2705                    addiw   a4,a4,1
+   10170:       00d65563                bge     a2,a3,1017a <main+0x76>
+   10174:       fec5ae23                sw      a2,-4(a1)
+   10178:       c394                    sw      a3,0(a5)
+   1017a:       0791                    addi    a5,a5,4
+   1017c:       fea746e3                blt     a4,a0,10168 <main+0x64>
+   10180:       2805                    addiw   a6,a6,1
+   10182:       0591                    addi    a1,a1,4
+   10184:       ff0510e3                bne     a0,a6,10164 <main+0x60>
+   10188:       4481                    li      s1,0
+   1018a:       00022937                lui     s2,0x22
+   1018e:       400c                    lw      a1,0(s0)
+   10190:       24890513                addi    a0,s2,584 # 22248 <__clzdi2+0x74>
+   10194:       2485                    addiw   s1,s1,1
+   10196:       3d4000ef                jal     1056a <printf>
+   1019a:       4792                    lw      a5,4(sp)
+   1019c:       0411                    addi    s0,s0,4
+   1019e:       fef4c8e3                blt     s1,a5,1018e <main+0x8a>
+   101a2:       740a                    ld      s0,160(sp)
+   101a4:       64ea                    ld      s1,152(sp)
+   101a6:       694a                    ld      s2,144(sp)
+   101a8:       70aa                    ld      ra,168(sp)
+   101aa:       69aa                    ld      s3,136(sp)
+   101ac:       614d                    addi    sp,sp,176
+   101ae:       8082                    ret
 ```
 ______________________
 **INSTALLING SPIKE**
@@ -462,5 +506,21 @@ cd build
 ../configure --prefix=/home/nawras/riscv --with-arch=rv64gc_zfencei --with-abi=lp64d
 make
 ```
+
+NOW I HAVE TO AGAIN CONFIGURE AND BUILD THE PROXY KERNEL 
+```bash
+git clone https://github.com/riscv-software-src/riscv-pk.git
+mkdir build
+cd build
+../configure --prefix=/home/nawras/riscv --host=riscv64-unknown-elf
+make
+make install
+```
+*I HAD  NO ERRORS AFTER THESE STEPS*
+![PK SUCCESS](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/5e67e505-9f26-4d6d-a538-5427e6701266)
+___________________________
+
+
+
 </details>
 
