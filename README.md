@@ -520,6 +520,22 @@ make install
 ![PK SUCCESS](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/5e67e505-9f26-4d6d-a538-5427e6701266)
 ___________________________
 
+**OUTPUT WITH SPIKE PK**
+
+![spike_pk_o1](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/d435db5a-bcc8-41fb-85f4-1599983dbad1)
+
+**OUTPUT WITH GCC**
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/6f847479-1a6b-4551-9366-b5d473e0f003)
+
+____________________________
+
+
+
+
+
+
+
 
 
 </details>
