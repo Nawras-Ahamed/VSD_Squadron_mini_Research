@@ -174,47 +174,47 @@ Instruction Encoding : | 0 0 0 0 0 0 0 | r5 | r2 | 1 1 0 | r9 | 0 1 1 0 0 1 1 |
 Instruction 5 : ```xor r10, r1, r4``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : Performs bitwise XOR operation between the contents of registers r1 and r4 and stores the result in register r10. <br>
-Instruction Encoding : | 0 0 0 0 0 0 0 | rs2 | rs1 | 1 0 0 | 0 1 1 0 0 1 1 |
+Instruction Encoding : | 0 0 0 0 0 0 0 | r4 | r1 | 1 0 0 | r10 | 0 1 1 0 0 1 1 |
 
 Instruction 6 : ```slt r11, r2, r4``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : . It stands for "Set Less Than", and it compares the values in registers r2 and r4. If the value in r2 is less than the value in r4, it sets the value of r11 to 1; otherwise, it sets it to 0 <br>
-Instruction Encoding : | 0 0 0 0 0 0 0 | rs2 | rs1 | 1 1 1 | 0 1 1 0 0 1 1 |
+Instruction Encoding : | 0 0 0 0 0 0 0 | rs4 | rs2 | 1 1 1 | r11 | 0 1 1 0 0 1 1 |
 
 Instruction 7 : ```addi r12, r4, 5``` <br>
 Instruction Type : **I-Type** <br>
 Instruction Specification : adds the immediate value 5 to the value in register r4 and stores the result in register r12 <br>
-Instruction Encoding :
+Instruction Encoding :| 0 0 0 0 0 0 0 0 0 1 0 0 | rs4 | 0 0 0 | r12 |0 1 0 0 0 1 1 |
 
 Instruction 8 : ```sw r3, r1, 2``` <br>
 Instruction Type : **S-TYPE** <br>
 Instruction Specification : stores the value from register r3 into the memory address formed by adding the immediate offset 2 to the value in register r1 <br>
-Instruction Encoding :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r3 | r1 | 0 1 0 | 0 0 0 1 0 | 0 1 0 0 0 1 1 |
 
 Instruction 9 : ```lw r13, r1, 2``` <br>
 Instruction Type : **S-TYPE** <br>
 Instruction Specification : used to load a 32-bit value from memory into a register <br>
-Instruction Encoding :
+Instruction Encoding : | 0 0 0 0 0 0 0 0 0 0 1 0| r1 | 0 1 0 | r13 | 0 0 0 0 0 1 1 |
 
 Instruction 10 : ```beq r0, r0, 15``` <br>
 Instruction Type : **B-TYPE** <br>
 Instruction Specification :checks if the values in registers r0 and r0 are equal. Since r0 is typically the zero register (hardwired to zero) this always evaluates TRUE <br>
-Instruction Encoding :
+Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 0 | imm[4:1|11] | 1 1 0 0 0 1 1 |
 
 Instruction 11 : ```bne r0, r1, 20``` <br>
 Instruction Type : **B-TYPE** <br>
 Instruction Specification :checks if the values in registers r0 and r1 are not equal If they are not equal the program will branch by adding the immediate offset of 20 to the PC <br>
-Instruction Encoding :
+Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 1 | imm[4:1|11] | 1 1 0 0 0 1 1 |
 
 Instruction 12 : ```sll r15, r1, r2(2)``` <br>
 Instruction Type : **R-TYPE** <br>
 Instruction Specification :logical left shift on the value in register r1, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r15 <br>
-Instruction Encoding :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 0 0 1 | r15 | 0 1 1 0 0 1 1 |
 
 Instruction 13 : ```srl r16, r14, r2(2)``` <br>
 Instruction Type : **R-TYPE** <br>
 Instruction Specification :logical right shift on the value in register r14, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r16 <br>
-Instruction Encoding :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 1 0 1 | r6 | 0 1 1 0 0 1 1 |
 
 
 </details>
