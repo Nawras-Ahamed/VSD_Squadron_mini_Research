@@ -528,9 +528,18 @@ ___________________________
 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/6f847479-1a6b-4551-9366-b5d473e0f003)
 
-____________________________
+</details>
 
 
+<details>
+  <summary> TASK 5 - TESTING THE RV32i core </summary>
+
+[Original Source](https://github.com/vinayrayapati/rv32i)
+
+![instructions_half-done](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/a796cca4-a63c-4953-91bd-8e4ff8a34577)
+ 
+</details>
+  
 
 
 
