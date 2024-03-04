@@ -127,7 +127,7 @@ sudo apt-get install iverilog
 
 
 <details>
-  <summary> TASK 2 - RISC-V ISA AND INSTRUCTION FORMAT </summary>
+  <summary> TASK 2 - RISC-V ISA AND INSTRUCTION ENCODING </summary>
   
   ### THE RISC-V ISA
 
@@ -138,7 +138,7 @@ The RISC-V ISA is defined as a base integer ISA, which must be present in any im
 The base integer instruction set, also known as the "RV32I" or "RV64I" instruction set, depending on the address space size, provides the core functionality required for general-purpose computing. 
 It includes instructions for arithmetic, logical and control,memory access and manipulation <br>
 
-The instruction format of an operation in binary is known as its instruction format. RISC-V employs six core instruction formats, each encoded in a fixed-length 32-bit format for streamlined decoding and execution. These formats fall into six types:
+The instruction Encoding of an operation in binary is known as its instruction format. RISC-V employs six core instruction formats, each encoded in a fixed-length 32-bit format for streamlined decoding and execution. These formats fall into six types:
 
 R-type: For register-to-register operations like arithmetic and logical operations, utilizing three register operands. <br>
 I-type: For short immediate operations involving arithmetic and logical operations with a 12-bit immediate value, employing two register operands. <br>
@@ -153,68 +153,68 @@ J-type: For unconditional jump operations transferring control to a different in
 Instruction 1 : ``` add r6, r2, r1``` <br>
 Instruction Type : **R-TYPE ARITHMETIC** <br>
 Instruction Specification : Performs addition operation on the contents of registers r2 and r1 and stores the result in register r6. <br>
-Instruction Format :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 0 0 0 | r6 | 0 1 1 0 0 1 1 |
 
 
 Instruction 2 : ``` sub r7, r1, r2 ``` <br>
 Instruction Type : **R-TYPE ARITHMETIC** <br>
 Instruction Specification : Performs subtraction operation on the contents of registers r2 and r1 and stores the result in register r7. <br>
-Instruction Format :
+Instruction Encoding : | 0 1 0 0 0 0 0 | r2 | r1 | 0 0 0 | r7 | 0 1 1 0 0 1 1 |
 
 Instruction 3 : ``` and r8, r1, r3``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : Performs bitwise AND operation between the contents of registers r1 and r3 and stores the result in register r8. <br>
-Instruction Format :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r3 | rs1 | 1 1 1 | r8 | 0 1 1 0 0 1 1 |
 
 Instruction 4 : ```or r9, r2, r5``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : Performs bitwise OR operation between the contents of registers r2 and r5 and stores the result in register r9. <br>
-Instruction Format :
+Instruction Encoding : | 0 0 0 0 0 0 0 | r5 | r2 | 1 1 0 | r9 | 0 1 1 0 0 1 1 |
 
 Instruction 5 : ```xor r10, r1, r4``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : Performs bitwise XOR operation between the contents of registers r1 and r4 and stores the result in register r10. <br>
-Instruction Format :
+Instruction Encoding : | 0 0 0 0 0 0 0 | rs2 | rs1 | 1 0 0 | 0 1 1 0 0 1 1 |
 
 Instruction 6 : ```slt r11, r2, r4``` <br>
 Instruction Type : **R-TYPE LOGICAL** <br>
 Instruction Specification : . It stands for "Set Less Than", and it compares the values in registers r2 and r4. If the value in r2 is less than the value in r4, it sets the value of r11 to 1; otherwise, it sets it to 0 <br>
-Instruction Format :
+Instruction Encoding : | 0 0 0 0 0 0 0 | rs2 | rs1 | 1 1 1 | 0 1 1 0 0 1 1 |
 
 Instruction 7 : ```addi r12, r4, 5``` <br>
 Instruction Type : **I-Type** <br>
 Instruction Specification : adds the immediate value 5 to the value in register r4 and stores the result in register r12 <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 8 : ```sw r3, r1, 2``` <br>
 Instruction Type : **S-TYPE** <br>
 Instruction Specification : stores the value from register r3 into the memory address formed by adding the immediate offset 2 to the value in register r1 <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 9 : ```lw r13, r1, 2``` <br>
 Instruction Type : **S-TYPE** <br>
 Instruction Specification : used to load a 32-bit value from memory into a register <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 10 : ```beq r0, r0, 15``` <br>
 Instruction Type : **B-TYPE** <br>
 Instruction Specification :checks if the values in registers r0 and r0 are equal. Since r0 is typically the zero register (hardwired to zero) this always evaluates TRUE <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 11 : ```bne r0, r1, 20``` <br>
 Instruction Type : **B-TYPE** <br>
 Instruction Specification :checks if the values in registers r0 and r1 are not equal If they are not equal the program will branch by adding the immediate offset of 20 to the PC <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 12 : ```sll r15, r1, r2(2)``` <br>
 Instruction Type : **R-TYPE** <br>
 Instruction Specification :logical left shift on the value in register r1, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r15 <br>
-Instruction Format :
+Instruction Encoding :
 
 Instruction 13 : ```srl r16, r14, r2(2)``` <br>
 Instruction Type : **R-TYPE** <br>
 Instruction Specification :logical right shift on the value in register r14, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r16 <br>
-Instruction Format :
+Instruction Encoding :
 
 
 </details>
