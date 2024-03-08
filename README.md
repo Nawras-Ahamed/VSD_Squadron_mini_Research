@@ -536,7 +536,91 @@ ___________________________
 
 [Original Source](https://github.com/vinayrayapati/rv32i)
 
+
 ![instructions_half-done](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/a796cca4-a63c-4953-91bd-8e4ff8a34577)
+
+
+<details>
+	<summary> ADD r6, r2, r1</summary>
+ 			
+ 
+	Instruction 1 :  add r6, r2, r1
+	Instruction Type : R-TYPE ARITHMETIC
+	Instruction Specification : Performs addition operation on the contents of registers r2 and r1 and stores the result in register r6.
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 0 0 0 | r6 | 0 1 1 0 0 1 1 |
+
+ ![add_verbose](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/8bfd91f9-7646-43af-a405-af9c726b2ed7)
+
+ Can see that ALU out contents are being written back to the reg file after two clock cycles and the opcode decode in the above waveform
+</details>
+
+
+<details>
+<summary> SUB r7, r1, r2</summary>
+ 			
+ 
+	Instruction 2 : sub r7, r1, r2
+	Instruction Type : R-TYPE ARITHMETIC
+	Instruction Specification : Performs subtraction operation on the contents of registers r2 and r1 and stores the result in register r7.
+	Instruction Encoding : | 0 1 0 0 0 0 0 | r2 | r1 | 0 0 0 | r7 | 0 1 1 0 0 1 1 |
+
+![sub](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/02aa2b91-94df-4476-8173-1d7736467802)
+
+Here the result is FFFFFFFF which is -1 in signed decimal representation as we have r2 = 2 and r1 = 1.
+ 
+ 
+</details>
+
+
+<details>
+<summary> AND r8, r1, r3</summary>
+ 			
+ 
+	Instruction 3 :  and r8, r1, r3
+	Instruction Type : R-TYPE LOGICAL
+	Instruction Specification : Performs bitwise AND operation between the contents of registers r1 and r3 and stores the result in register r8.
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r3 | rs1 | 1 1 1 | r8 | 0 1 1 0 0 1 1 |
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/a70fff09-3265-4430-aa56-0a89c7609b8a)
+
+r1 = 1  (01)
+r3 = 3  (11)
+So r8 = (01) on `and` operation
+
+</details>
+
+<details>
+<summary> OR r9, r2, r5</summary>
+ 			
+ 
+	Instruction 4 : or r9, r2, r5
+	Instruction Type : R-TYPE LOGICAL
+	Instruction Specification : Performs bitwise OR operation between the contents of registers r2 and r5 and stores the result in register r9.
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r5 | r2 | 1 1 0 | r9 | 0 1 1 0 0 1 1 |
+
+r2 = 2  (010)
+r5 = 5  (101)
+So r9 = (111) on `or` operation
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/fb23e391-f217-4409-8b14-79b5175f3111)
+
+</details>
+
+<details>
+<summary> XOR r10, r1, r4</summary>
+ 			
+ 
+	Instruction 5 : xor r10, r1, r4
+	Instruction Type : R-TYPE LOGICAL
+	Instruction Specification : Performs bitwise XOR operation between the contents of registers r1 and r4 and stores the result in register r10.
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r4 | r1 | 1 0 0 | r10 | 0 1 1 0 0 1 1 |
+r1 = 1  (001)
+r4 = 4  (100)
+So r10 = (101) on `xor` operation
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/51291587-972e-44e8-b8b6-116e3961983b)
+
+
+</details>
  
 </details>
   
