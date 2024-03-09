@@ -184,7 +184,7 @@ Instruction Encoding : | 0 0 0 0 0 0 0 | rs4 | rs2 | 1 1 1 | r11 | 0 1 1 0 0 1 1
 Instruction 7 : ```addi r12, r4, 5``` <br>
 Instruction Type : **I-Type** <br>
 Instruction Specification : adds the immediate value 5 to the value in register r4 and stores the result in register r12 <br>
-Instruction Encoding :| 0 0 0 0 0 0 0 0 0 1 0 0 | rs4 | 0 0 0 | r12 |0 1 0 0 0 1 1 |
+Instruction Encoding :| 0 0 0 0 0 0 0 0 0 1 0 1 | rs4 | 0 0 0 | r12 |0 1 0 0 0 1 1 |
 
 Instruction 8 : ```sw r3, r1, 2``` <br>
 Instruction Type : **S-TYPE** <br>
@@ -621,6 +621,44 @@ So r10 = (101) on `xor` operation
 
 
 </details>
+
+<details>
+<summary> SLT r11, r2, r4</summary>
+ 			
+	Instruction 6 : slt r11, r2, r4
+	Instruction Type : R-TYPE LOGICAL
+	Instruction Specification : . It stands for "Set Less Than", and it compares the values in registers r2 and r4. If the value in r2 is less than the value in r4, it sets the value of r11 to 1; otherwise, it sets it to 0
+	Instruction Encoding : | 0 0 0 0 0 0 0 | rs4 | rs2 | 1 1 1 | r11 | 0 1 1 0 0 1 1 |
+
+r2 = 2 (010)
+r4 = 4 (100)
+
+r11 = 1 since r2 value is less than r4 value
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/360ab74a-2962-4542-b438-1eacc63d0b25)
+
+</details>
+
+<details>
+<summary> ADDI r12, r4, 5</summary>
+ 			
+	Instruction 7 : addi r12, r4, 5
+	Instruction Type : I-Type
+	Instruction Specification : adds the immediate value 5 to the value in register r4 and stores the result in register r12
+	Instruction Encoding :| 0 0 0 0 0 0 0 0 0 1 0 1 | rs4 | 0 0 0 | r12 |0 1 0 0 0 1 1 |
+
+imm_value = 5
+r4 = 4
+
+r12 -> (r4)+5 
+r12 = 9
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/6a2cbac6-8b81-400c-9830-a78f105adf16)
+
+can see the ID_EX_IMMEDIATE SIGNAL @48ms getting loaded with 00000005
+
+</details>
+
  
 </details>
   
