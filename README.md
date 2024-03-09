@@ -659,13 +659,72 @@ can see the ID_EX_IMMEDIATE SIGNAL @48ms getting loaded with 00000005
 
 </details>
 
- 
+<details>
+<summary> SW r3, r1, 2</summary>
+	
+	Instruction 8 : sw r3, r1, 2
+	Instruction Type : S-TYPE
+	Instruction Specification : stores the value from register r3 into the memory address formed by adding the immediate offset 2 to the value in register r1
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r3 | r1 | 0 1 0 | 0 0 0 1 0 | 0 1 0 0 0 1 1 |
+
+imm_value (offset)  = 2
+r1 = 1 
+r3 = 3
+
+effective_addr = 3 
+MEM[effective_addr] -> (r3)
+
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/2271859e-fdff-4ad8-a53c-9ed099e91e75)
+
+Can see the value `3` being written @72 ms into the memory 
+
 </details>
-  
+
+<details>
+<summary> LW r13, r1, 2</summary>
+	
+	Instruction 9 : lw r13, r1, 2
+	Instruction Type : S-TYPE
+	Instruction Specification : used to load a 32-bit value from memory into a register
+	Instruction Encoding : | 0 0 0 0 0 0 0 0 0 0 1 0| r1 | 0 1 0 | r13 | 0 0 0 0 0 1 1 |
+
+imm_value (offset)  = 2
+r1 = 1 
+effective_addr = 3 
+(MEM[effective_addr]) = 3 <br>
+
+r13 = 3 (from the memory)
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/af24d1f7-71c1-45fc-8560-278efac290bd)
 
 
+Can see the value `3` being written from memory to the register @80ms since the prev instruction was of storing the data at the same location and now its loading it into a register we dont find to see any change in the signals(held @ 3)
+
+</details>
+
+<details>
+<summary> BEQ r0, r0, 15</summary>
+	
+	Instruction 10 : beq r0, r0, 15
+	Instruction Type : B-TYPE
+	Instruction Specification :checks if the values in registers r0 and r0 are equal. Since r0 is typically the zero register (hardwired to zero) this always evaluates TRUE
+	Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 0 | imm[4:1|11] | 1 1 0 0 0 1 1 |
+
+The expression is always true, so the BR_EN= 1 @72ms 
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/0dd9c747-bf25-479c-9ead-daa5302634bb)
 
 
+In this final stage, the branch target address is determined, but no write-back operation occurs.
+Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @78ms (see the PROGRAM COUNTER NPC)
+0C to 19 this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
+
+So we can say that the PC has jumped to the as the Branch conditions are met.
+
+We can conclude that after this their would be no instructions (as per the verilog code) to be exceuted so we get no Writeback operations to take place, But since it's a 5-Stage pipelined processor The other instructions might have been done halfway till Execute stage which can be seen clearly at the `EX_MEM_ALUOUT`
+
+</details>
 
 
 
