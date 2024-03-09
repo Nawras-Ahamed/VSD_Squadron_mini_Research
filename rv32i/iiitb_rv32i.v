@@ -69,7 +69,7 @@ output reg [31:0]WB_OUT,NPC;
 //REG FILE
 reg [31:0]REG[0:31];                                               
 //64*32 IMEM
-reg [31:0]MEM[0:31];                                             
+reg [31:0]MEM[0:63];                                             
 //64*32 DMEM
 reg [31:0]DM[0:31];   
 
@@ -134,11 +134,11 @@ MEM[6] <= 32'h00520600;         //addi r12,r4,5.(i7)
 MEM[7] <= 32'h00209181;         //sw r3,r1,2.(i8)
 MEM[8] <= 32'h00208681;         //lw r13,r1,2.(i9)
 MEM[9]  <= 32'h00f00002;         //beq r0,r0,15.(i10)
-MEM[10] <= 32'h00210700;         //add r14,r2,r2.(i11)
-MEM[11] <= 32'h01409002;         //bne r0,r1,20.(i12)
-MEM[12] <= 32'h00520601;         //addi r12,r4,5.(i13)
-MEM[13] <= 32'h00208783;         //sll r15,r1,r2(2).(i14)
-MEM[14] <= 32'h00271803;         //srl r16,r14,r2(2).(i15) 
+MEM[25] <= 32'h00210700;         //add r14,r2,r2.(i11)
+MEM[27] <= 32'h01409002;         //bne r0,r1,20.(i12)
+MEM[49] <= 32'h00520601;         //addi r12,r4,5.(i13)
+MEM[50] <= 32'h00208783;         //sll r15,r1,r2(2).(i14)
+MEM[51] <= 32'h00271803;         //srl r16,r14,r2(2).(i15) 
 
 //for(k=0;k<=31;k++)
 //REG[k]<=k;
@@ -178,21 +178,21 @@ end*/
 end
 //I_FECT STAGE
 
-always @(posedge clk) begin
+/*always @(posedge clk) begin
 
 //NPC <= rst ? 32'd0 : NPC+32'd1;
 
 if(EX_MEM_COND==1 && EX_MEM_IR[6:0]==BR_TYPE) begin
 NPC=EX_MEM_ALUOUT;
-IF_ID=MEM[NPC];
+IF_ID_IR=MEM[NPC];
 end
 
 else begin
 NPC<=NPC+32'd1;
-IF_ID<=MEM[NPC];
+IF_ID_IR<=MEM[NPC];
 IF_ID_NPC<=NPC+32'd1;
 end
-end
+end*/
 
 
 //FETCH STAGE END
