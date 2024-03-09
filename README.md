@@ -549,7 +549,8 @@ ___________________________
 	Instruction Specification : Performs addition operation on the contents of registers r2 and r1 and stores the result in register r6.
 	Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 0 0 0 | r6 | 0 1 1 0 0 1 1 |
 
- ![add_verbose](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/8bfd91f9-7646-43af-a405-af9c726b2ed7)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/b827d936-7a05-4868-b792-bcc92c4085c1)
+
 
  Can see that ALU out contents are being written back to the reg file after two clock cycles and the opcode decode in the above waveform
 </details>
@@ -564,7 +565,8 @@ ___________________________
 	Instruction Specification : Performs subtraction operation on the contents of registers r2 and r1 and stores the result in register r7.
 	Instruction Encoding : | 0 1 0 0 0 0 0 | r2 | r1 | 0 0 0 | r7 | 0 1 1 0 0 1 1 |
 
-![sub](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/02aa2b91-94df-4476-8173-1d7736467802)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/f9b98cd3-18db-4d92-960b-b25d7a14fcce)
+
 
 Here the result is FFFFFFFF which is -1 in signed decimal representation as we have r2 = 2 and r1 = 1.
  
@@ -580,7 +582,8 @@ Here the result is FFFFFFFF which is -1 in signed decimal representation as we h
 	Instruction Type : R-TYPE LOGICAL
 	Instruction Specification : Performs bitwise AND operation between the contents of registers r1 and r3 and stores the result in register r8.
 	Instruction Encoding : | 0 0 0 0 0 0 0 | r3 | rs1 | 1 1 1 | r8 | 0 1 1 0 0 1 1 |
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/a70fff09-3265-4430-aa56-0a89c7609b8a)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9487ea91-c78f-449c-93e9-79f840de0580)
+
 
 r1 = 1  (01)
 r3 = 3  (11)
@@ -601,7 +604,8 @@ r2 = 2  (010)
 r5 = 5  (101)
 So r9 = (111) on `or` operation
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/fb23e391-f217-4409-8b14-79b5175f3111)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/e8eadbc3-01e3-480c-8a5d-4cd1f79cad5d)
+
 
 </details>
 
@@ -617,7 +621,7 @@ r1 = 1  (001)
 r4 = 4  (100)
 So r10 = (101) on `xor` operation
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/51291587-972e-44e8-b8b6-116e3961983b)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/1df1b654-b160-48f3-8154-24af2437d493)
 
 
 </details>
@@ -635,7 +639,7 @@ r4 = 4 (100)
 
 r11 = 1 since r2 value is less than r4 value
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/360ab74a-2962-4542-b438-1eacc63d0b25)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/81414194-c6e8-4508-872a-1102a466a110)
 
 </details>
 
@@ -653,9 +657,12 @@ r4 = 4
 r12 -> (r4)+5 
 r12 = 9
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/6a2cbac6-8b81-400c-9830-a78f105adf16)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/1e847afa-efbe-4020-b437-9c68f110411d)
 
-can see the ID_EX_IMMEDIATE SIGNAL @48ms getting loaded with 00000005
+can see the `ID_EX_IMMEDIATE SIGNAL` @48ms getting loaded with 00000005
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/4d4276aa-1a02-42ab-b3e9-ac45c76ea4cb)
+
 
 </details>
 
@@ -675,7 +682,7 @@ effective_addr = 3
 MEM[effective_addr] -> (r3)
 
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/2271859e-fdff-4ad8-a53c-9ed099e91e75)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/cf132ff6-c383-426c-8188-bab9e2bf1d2c)
 
 Can see the value `3` being written @72 ms into the memory 
 
@@ -696,7 +703,7 @@ effective_addr = 3
 
 r13 = 3 (from the memory)
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/af24d1f7-71c1-45fc-8560-278efac290bd)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/fb45c8bc-84cf-4d2b-a13c-5682031b8cba)
 
 
 Can see the value `3` being written from memory to the register @80ms since the prev instruction was of storing the data at the same location and now its loading it into a register we dont find to see any change in the signals(held @ 3)
@@ -711,22 +718,53 @@ Can see the value `3` being written from memory to the register @80ms since the 
 	Instruction Specification :checks if the values in registers r0 and r0 are equal. Since r0 is typically the zero register (hardwired to zero) this always evaluates TRUE
 	Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 0 | imm[4:1|11] | 1 1 0 0 0 1 1 |
 
-The expression is always true, so the BR_EN= 1 @72ms 
+The expression is always true, so the `BR_EN= 1` @72ms 
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/0dd9c747-bf25-479c-9ead-daa5302634bb)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/ac114bc0-20bf-4053-b46c-17571a884ee9)
+
 
 
 In this final stage, the branch target address is determined, but no write-back operation occurs.
+
+
 Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @78ms (see the PROGRAM COUNTER `NPC`)
-0C to 19 this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
+0C to 19 (19-C = 13 in decimal)this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/7640f390-de5a-45c8-9cf1-80cdd0eaadb3)
+
+
 
 So we can say that the PC has jumped as the Branch conditions are met.
 
 We can conclude that after this their would be no instructions (as per the verilog code) to be exceuted so we get no Writeback operations to take place, But since it's a 5-Stage pipelined processor The other instructions might have been done halfway till Execute stage which can be seen clearly at the `EX_MEM_ALUOUT`
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/03487ba4-69e3-4897-bcf2-1d5e28f7d5d7) 
 
 </details>
 
 <details>
+
+<summary> ADD r14,r2,r2</summary>
+	
+	Instruction 11:  add r14, r2, r2
+	Instruction Type : R-TYPE ARITHMETIC
+	Instruction Specification : Performs addition operation on the contents of registers r2 and r2 and stores the result in register r14.
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r2 | r2 | 0 0 0 | r14 | 0 1 1 0 0 1 1 |
+
+`MEM[25] <= 32'h00210700;         //add r14,r2,r2.(i11)`
+
+r2 = 2
+r14 = 4
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/4234f260-e79c-4a31-99d3-3b937bee2162)
+
+</details>
+____________________________
+
+### Since there were other instructions which were commented out
+
+
+<details> 
+
+ 
 <summary> BNE r0, r1, 20</summary>
 	
 	Instruction 11 : bne r0, r1, 20
@@ -734,19 +772,54 @@ We can conclude that after this their would be no instructions (as per the veril
 	Instruction Specification :checks if the values in registers r0 and r1 are not equal If they are not equal the program will branch by adding the immediate offset of 20 to the PC
 	Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 1 | imm[4:1|11] | 1 1 0 0 0 1 1 |
 
-The expression is always true, so the BR_EN= 1 @84ms 
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/0dd9c747-bf25-479c-9ead-daa5302634bb)
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/febefaed-18c5-42cc-b516-c9168a6269d8)
 
+
+WE can see that `BR_EN=1` @108ms
 
 In this final stage, the branch target address is determined, but no write-back operation occurs.
 Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @84ms (see the PROGRAM COUNTER `NPC`)
-19 to 1A this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
+1E to 30 (30-1E = 18 in decimal) this happens due to the imm_value = 20 which becomes the target address and gets updated to the Program Counter. 
+
 
 So we can say that the PC has jumped  as the Branch conditions are met.
 
 </details>
 
+<details>
+	
+<summary> SLL r15, r1, r2(2)</summary>
+	
+	Instruction 12 : sll r15, r1, r2(2)
+	Instruction Type : R-TYPE
+	Instruction Specification :logical left shift on the value in register r1, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r15
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 0 0 1 | r15 | 0 1 1 0 0 1 1 |
+
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/f1b7801d-65d6-41ef-8611-973eea7fff04)
+
+Since r1 = 001
+on left shift of 2 we get 100 which is 4 in decimal hence it's stored at r15 and can be seen at the cursor
 
 </details>
+
+<details>
+	
+<summary> SRL r16, r14, r2(2)</summary>
+	
+	Instruction 13 : srl r16, r14, r2(2)
+	Instruction Type : R-TYPE
+	Instruction Specification :logical right shift on the value in register r14, shifting it left by a number of bits specified by the value in register r2 which is 2 in this case and stores the result in register r16
+	Instruction Encoding : | 0 0 0 0 0 0 0 | r1 | r2 | 1 0 1 | r6 | 0 1 1 0 0 1 1 |
+
+
+Since r14 = 4 , which was updated by the add instruction @150ms
+
+On right shift to 2 we get r14 as 001 which is then stored in r16 register.
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/087d6488-ac4e-468f-b520-56194c803ae2)
+
+</details>
+
 
