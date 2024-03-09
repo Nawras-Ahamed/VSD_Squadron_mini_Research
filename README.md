@@ -717,15 +717,35 @@ The expression is always true, so the BR_EN= 1 @72ms
 
 
 In this final stage, the branch target address is determined, but no write-back operation occurs.
-Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @78ms (see the PROGRAM COUNTER NPC)
+Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @78ms (see the PROGRAM COUNTER `NPC`)
 0C to 19 this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
 
-So we can say that the PC has jumped to the as the Branch conditions are met.
+So we can say that the PC has jumped as the Branch conditions are met.
 
 We can conclude that after this their would be no instructions (as per the verilog code) to be exceuted so we get no Writeback operations to take place, But since it's a 5-Stage pipelined processor The other instructions might have been done halfway till Execute stage which can be seen clearly at the `EX_MEM_ALUOUT`
 
 </details>
 
+<details>
+<summary> BNE r0, r1, 20</summary>
+	
+	Instruction 11 : bne r0, r1, 20
+	Instruction Type : B-TYPE
+	Instruction Specification :checks if the values in registers r0 and r1 are not equal If they are not equal the program will branch by adding the immediate offset of 20 to the PC
+	Instruction Encoding : | imm[12|10:5] | r0 | r0 | 0 0 1 | imm[4:1|11] | 1 1 0 0 0 1 1 |
+
+The expression is always true, so the BR_EN= 1 @84ms 
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/0dd9c747-bf25-479c-9ead-daa5302634bb)
+
+
+In this final stage, the branch target address is determined, but no write-back operation occurs.
+Instead, the branch target address is passed to the next stage of the pipeline to update the program counter which can be seen at the cursor in the picture @84ms (see the PROGRAM COUNTER `NPC`)
+19 to 1A this happens due to the imm_value = 15 which becomes the target address and gets updated to the Program Counter. 
+
+So we can say that the PC has jumped  as the Branch conditions are met.
+
+</details>
 
 
 </details>
