@@ -822,4 +822,109 @@ On right shift to 2 we get r14 as 001 which is then stored in r16 register.
 
 </details>
 
+</details>
 
+<details>
+	<summary> TASK 6 - GATE LEVEL SIMULATION </summary>
+
+```bash
+	cd rv32i
+	yosys
+	read_verilog iiitb_rv32i.v
+	synth -top iiitb_rv32i
+```
+ ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/19bb02d3-dc62-48be-a78f-91ca0fcf3056)
+
+ ```bash
+dfflibmap -liberty /home/nawras/rv32i/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/fe07dea0-5429-40f1-9097-91f87cbb4fdf)
+
+```bash
+proc; opt
+```
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/0fb3d80a-a4de-44e3-8417-dfd7a47d9a8f)
+
+```bash
+abc -liberty /home/nawras/rv32i/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime,{D};strash;dch,-f;map,-M,1,{D}
+```
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/12ec4822-dfe2-4759-ad1b-4f430bb9de40)
+
+```bash
+clean
+flatten
+```
+
+```bash
+write_verilog -noattr iiitb_rv32i_synth.v
+stat
+
+=== iiitb_rv32i ===
+
+   Number of wires:               5045
+   Number of wire bits:          10081
+   Number of public wires:         145
+   Number of public wire bits:    4530
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7300
+     sky130_fd_sc_hd__a2111oi_0     14
+     sky130_fd_sc_hd__a211o_1        7
+     sky130_fd_sc_hd__a211oi_1      29
+     sky130_fd_sc_hd__a21boi_0       4
+     sky130_fd_sc_hd__a21o_1        37
+     sky130_fd_sc_hd__a21oi_1      382
+     sky130_fd_sc_hd__a221o_1        3
+     sky130_fd_sc_hd__a221oi_1      17
+     sky130_fd_sc_hd__a222oi_1     217
+     sky130_fd_sc_hd__a22o_1         8
+     sky130_fd_sc_hd__a22oi_1      592
+     sky130_fd_sc_hd__a311oi_1       3
+     sky130_fd_sc_hd__a31o_1         1
+     sky130_fd_sc_hd__a31oi_1       22
+     sky130_fd_sc_hd__a32o_1         1
+     sky130_fd_sc_hd__a32oi_1       33
+     sky130_fd_sc_hd__a41oi_1        2
+     sky130_fd_sc_hd__and2_0        21
+     sky130_fd_sc_hd__and3_1        41
+     sky130_fd_sc_hd__and3b_1        3
+     sky130_fd_sc_hd__and4_1        14
+     sky130_fd_sc_hd__buf_1          4
+     sky130_fd_sc_hd__clkinv_1      38
+     sky130_fd_sc_hd__dfrtp_1       32
+     sky130_fd_sc_hd__dfxtp_1     1758
+     sky130_fd_sc_hd__maj3_1         2
+     sky130_fd_sc_hd__mux2_1        34
+     sky130_fd_sc_hd__nand2_1     1737
+     sky130_fd_sc_hd__nand2b_1      18
+     sky130_fd_sc_hd__nand3_1      110
+     sky130_fd_sc_hd__nand3b_1       7
+     sky130_fd_sc_hd__nand4_1       25
+     sky130_fd_sc_hd__nand4b_1       2
+     sky130_fd_sc_hd__nor2_1       138
+     sky130_fd_sc_hd__nor2b_1       18
+     sky130_fd_sc_hd__nor3_1        46
+     sky130_fd_sc_hd__nor3b_1        8
+     sky130_fd_sc_hd__nor4_1        79
+     sky130_fd_sc_hd__o2111ai_1      7
+     sky130_fd_sc_hd__o211ai_1      11
+     sky130_fd_sc_hd__o21a_1         1
+     sky130_fd_sc_hd__o21ai_0     1602
+     sky130_fd_sc_hd__o221ai_1       3
+     sky130_fd_sc_hd__o22ai_1       19
+     sky130_fd_sc_hd__o311a_1        1
+     sky130_fd_sc_hd__o311ai_0       1
+     sky130_fd_sc_hd__o31ai_1       21
+     sky130_fd_sc_hd__o32ai_1        9
+     sky130_fd_sc_hd__o41ai_1        1
+     sky130_fd_sc_hd__or2_0         24
+     sky130_fd_sc_hd__or3_1         19
+     sky130_fd_sc_hd__or3b_1         5
+     sky130_fd_sc_hd__or4_1          2
+     sky130_fd_sc_hd__xnor2_1       45
+     sky130_fd_sc_hd__xor2_1        22
+```
+
+</details>
