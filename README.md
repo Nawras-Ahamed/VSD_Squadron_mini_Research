@@ -862,69 +862,89 @@ stat
 
 === iiitb_rv32i ===
 
-   Number of wires:               5045
-   Number of wire bits:          10081
-   Number of public wires:         145
-   Number of public wire bits:    4530
+   Number of wires:               5307
+   Number of wire bits:           8700
+   Number of public wires:          97
+   Number of public wire bits:    2994
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               7300
-     sky130_fd_sc_hd__a2111oi_0     14
-     sky130_fd_sc_hd__a211o_1        7
-     sky130_fd_sc_hd__a211oi_1      29
-     sky130_fd_sc_hd__a21boi_0       4
-     sky130_fd_sc_hd__a21o_1        37
-     sky130_fd_sc_hd__a21oi_1      382
-     sky130_fd_sc_hd__a221o_1        3
-     sky130_fd_sc_hd__a221oi_1      17
-     sky130_fd_sc_hd__a222oi_1     217
-     sky130_fd_sc_hd__a22o_1         8
-     sky130_fd_sc_hd__a22oi_1      592
-     sky130_fd_sc_hd__a311oi_1       3
-     sky130_fd_sc_hd__a31o_1         1
-     sky130_fd_sc_hd__a31oi_1       22
-     sky130_fd_sc_hd__a32o_1         1
-     sky130_fd_sc_hd__a32oi_1       33
-     sky130_fd_sc_hd__a41oi_1        2
-     sky130_fd_sc_hd__and2_0        21
-     sky130_fd_sc_hd__and3_1        41
-     sky130_fd_sc_hd__and3b_1        3
-     sky130_fd_sc_hd__and4_1        14
-     sky130_fd_sc_hd__buf_1          4
-     sky130_fd_sc_hd__clkinv_1      38
+   Number of cells:               7340
+     sky130_fd_sc_hd__a2111oi_0      9
+     sky130_fd_sc_hd__a211oi_1      20
+     sky130_fd_sc_hd__a21boi_0       5
+     sky130_fd_sc_hd__a21o_1        50
+     sky130_fd_sc_hd__a21oi_1     1563
+     sky130_fd_sc_hd__a221o_1        5
+     sky130_fd_sc_hd__a221oi_1      16
+     sky130_fd_sc_hd__a222oi_1     194
+     sky130_fd_sc_hd__a22o_1         3
+     sky130_fd_sc_hd__a22oi_1      499
+     sky130_fd_sc_hd__a2bb2oi_1      1
+     sky130_fd_sc_hd__a311o_1        1
+     sky130_fd_sc_hd__a311oi_1       7
+     sky130_fd_sc_hd__a31o_1         2
+     sky130_fd_sc_hd__a31oi_1       17
+     sky130_fd_sc_hd__a32oi_1       35
+     sky130_fd_sc_hd__a41oi_1        1
+     sky130_fd_sc_hd__and2_0        72
+     sky130_fd_sc_hd__and3_1        53
+     sky130_fd_sc_hd__and4_1         2
+     sky130_fd_sc_hd__clkinv_1      52
      sky130_fd_sc_hd__dfrtp_1       32
-     sky130_fd_sc_hd__dfxtp_1     1758
-     sky130_fd_sc_hd__maj3_1         2
-     sky130_fd_sc_hd__mux2_1        34
-     sky130_fd_sc_hd__nand2_1     1737
-     sky130_fd_sc_hd__nand2b_1      18
-     sky130_fd_sc_hd__nand3_1      110
-     sky130_fd_sc_hd__nand3b_1       7
-     sky130_fd_sc_hd__nand4_1       25
-     sky130_fd_sc_hd__nand4b_1       2
-     sky130_fd_sc_hd__nor2_1       138
-     sky130_fd_sc_hd__nor2b_1       18
-     sky130_fd_sc_hd__nor3_1        46
-     sky130_fd_sc_hd__nor3b_1        8
-     sky130_fd_sc_hd__nor4_1        79
-     sky130_fd_sc_hd__o2111ai_1      7
-     sky130_fd_sc_hd__o211ai_1      11
-     sky130_fd_sc_hd__o21a_1         1
-     sky130_fd_sc_hd__o21ai_0     1602
-     sky130_fd_sc_hd__o221ai_1       3
-     sky130_fd_sc_hd__o22ai_1       19
-     sky130_fd_sc_hd__o311a_1        1
-     sky130_fd_sc_hd__o311ai_0       1
-     sky130_fd_sc_hd__o31ai_1       21
-     sky130_fd_sc_hd__o32ai_1        9
-     sky130_fd_sc_hd__o41ai_1        1
-     sky130_fd_sc_hd__or2_0         24
-     sky130_fd_sc_hd__or3_1         19
-     sky130_fd_sc_hd__or3b_1         5
-     sky130_fd_sc_hd__or4_1          2
-     sky130_fd_sc_hd__xnor2_1       45
-     sky130_fd_sc_hd__xor2_1        22
+     sky130_fd_sc_hd__dfxtp_1     1618
+     sky130_fd_sc_hd__maj3_1        15
+     sky130_fd_sc_hd__mux2_1        43
+     sky130_fd_sc_hd__mux2i_1       33
+     sky130_fd_sc_hd__mux4_2         8
+     sky130_fd_sc_hd__nand2_1      572
+     sky130_fd_sc_hd__nand2b_1      44
+     sky130_fd_sc_hd__nand3_1       75
+     sky130_fd_sc_hd__nand3b_1       3
+     sky130_fd_sc_hd__nand4_1       12
+     sky130_fd_sc_hd__nand4b_1       1
+     sky130_fd_sc_hd__nor2_1      1272
+     sky130_fd_sc_hd__nor2b_1       19
+     sky130_fd_sc_hd__nor3_1        41
+     sky130_fd_sc_hd__nor3b_1        4
+     sky130_fd_sc_hd__nor4_1        82
+     sky130_fd_sc_hd__nor4b_1        3
+     sky130_fd_sc_hd__nor4bb_1       1
+     sky130_fd_sc_hd__o2111ai_1      5
+     sky130_fd_sc_hd__o211a_1        4
+     sky130_fd_sc_hd__o211ai_1      27
+     sky130_fd_sc_hd__o21a_1        18
+     sky130_fd_sc_hd__o21ai_0      501
+     sky130_fd_sc_hd__o21bai_1       1
+     sky130_fd_sc_hd__o221a_1        3
+     sky130_fd_sc_hd__o221ai_1      16
+     sky130_fd_sc_hd__o22a_1         5
+     sky130_fd_sc_hd__o22ai_1       42
+     sky130_fd_sc_hd__o2bb2ai_1      1
+     sky130_fd_sc_hd__o311a_1        3
+     sky130_fd_sc_hd__o311ai_0       4
+     sky130_fd_sc_hd__o31a_1         2
+     sky130_fd_sc_hd__o31ai_1       19
+     sky130_fd_sc_hd__o32a_1         2
+     sky130_fd_sc_hd__o32ai_1       22
+     sky130_fd_sc_hd__or2_0         33
+     sky130_fd_sc_hd__or3_1         29
+     sky130_fd_sc_hd__or3b_1         4
+     sky130_fd_sc_hd__or4_1          4
+     sky130_fd_sc_hd__xnor2_1       73
+     sky130_fd_sc_hd__xor2_1        37
 ```
+
+TROUBLESHOOT 1 :
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/14d3982c-ba57-4129-9921-3ac84896636d)
+Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues/518#issuecomment-894181871
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9f487701-5861-40db-9449-6e946a10fa40)
+
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/cfc8323f-1d53-4c3b-a326-c2a197df1ed7)
+
+
+
 
 </details>
