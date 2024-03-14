@@ -1,4 +1,4 @@
-# Exploring RISC-V with VSDSquadron Mini RISC-V Dev Board 
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/e8c766c6-a8df-4044-85df-aeffc31d1382)# Exploring RISC-V with VSDSquadron Mini RISC-V Dev Board 
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
@@ -932,7 +932,9 @@ stat
 ```
 
 TROUBLESHOOT 1 :
+
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/14d3982c-ba57-4129-9921-3ac84896636d)
+
 Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues/518#issuecomment-894181871
 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9f487701-5861-40db-9449-6e946a10fa40)
@@ -940,6 +942,42 @@ Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues
 
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/cfc8323f-1d53-4c3b-a326-c2a197df1ed7)
 
+
+**add r6, r2, r1**
+
+![ADD_GLS](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/ed35181f-4d92-4aef-b2d6-f86bfef58665)
+
+**sub r7, r1, r2**
+
+![SUB_GLS](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/d739eeda-1041-4c31-9555-5d2554117158)
+
+**and r8, r1, r3**
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/e16297be-ed7e-4a21-97a2-0679ebb3fa37)
+
+**or r9, r2, r5**
+
+![Screenshot from 2024-03-14 19-17-07](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/73597dc6-3889-41c9-8d4f-d4475ff3eb14)
+
+**xor r10, r1, r4**
+
+![Screenshot from 2024-03-14 19-17-20](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/27d367a6-ae36-44e7-a038-69c25a4f1d0d)
+
+**slt r11, r2, r4**
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/cb982257-0faf-4135-9495-19c3ab78ce4d)
+
+**addi r12, r4, 5**
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/8539a8e6-177a-4cda-91fa-fccd0dfed61e)
+
+**sw r3, r1, 2**
+
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/d6ef0f6a-af45-4a92-b27f-05d0bb0dfb96)
+
+**add r14,r2,r2**
+
+![Screenshot from 2024-03-14 21-52-15](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9aef3522-8e1d-4133-9f90-f75c949236ec)
 
 
 
