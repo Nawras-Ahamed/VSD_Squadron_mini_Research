@@ -1,4 +1,4 @@
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/e8c766c6-a8df-4044-85df-aeffc31d1382)# Exploring RISC-V with VSDSquadron Mini RISC-V Dev Board 
+# Exploring RISC-V with VSDSquadron Mini RISC-V Dev Board 
 
 [Click here for board link](https://www.vlsisystemdesign.com/vsdsquadronmini/)
 
