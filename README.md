@@ -27,11 +27,7 @@ BOARD SPECS:
 | Digital I/O pins                                                           15                                                                                           |
 | Built-in LED Pin                                                           1X onboard user led (PD6)                                                                    |
 | USB 2.0 Type-C                                                            
-   
 
-This repo is intended to document the weekly progress.
-
-### The first online meet was held on 16th of Feb 2024 @6PM
 
 <details>
     <summary> TASK 1 - INSTALLING TOOLS</summary>
