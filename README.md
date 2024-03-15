@@ -940,8 +940,6 @@ Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues
 ![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9f487701-5861-40db-9449-6e946a10fa40)
 
 
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/cfc8323f-1d53-4c3b-a326-c2a197df1ed7)
-
 
 **add r6, r2, r1**
 
@@ -985,5 +983,8 @@ Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues
 
 
 **GLS**
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/d341429e-3e6a-4d9f-9ffb-20047dd085e8)
+
+
 
 </details>
