@@ -980,5 +980,10 @@ Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues
 ![Screenshot from 2024-03-14 21-52-15](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/9aef3522-8e1d-4133-9f90-f75c949236ec)
 
 
+**NETLIST**
+![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/b7b2d5f8-7e17-481b-922d-6936963eff68)
+
+
+**GLS**
 
 </details>
