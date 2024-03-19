@@ -983,7 +983,7 @@ Resolved by Referring to https://github.com/The-OpenROAD-Project/OpenLane/issues
 
 
 **GLS**
-![image](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/d341429e-3e6a-4d9f-9ffb-20047dd085e8)
+
 
 ![Screenshot_20240317-092741](https://github.com/Nawras-Ahamed/VSD_Squadron_mini_Research/assets/50738659/51ddff75-9bec-48a9-8559-c6afc925dda3)
 
